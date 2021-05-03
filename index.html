@@ -1,12 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sebastian Netzker | Front End Development</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+
+
+    <script src="script.js"></script>
+  </head>
+  <body onload="automatic_closeMenu(), getParameter()">
+
+
+
+    <div class="popup" id="popup-1">
+
+        <div class="overlay"></div>
+        <div class="content">
+            <button onclick="closePopup()" class="close-btn">&times</button>
+            <h3>Your message has been sent.</h3>
+        </div>
+
+    </div>
+    <nav>
+      <a class="projects_link" href="#projects">Projects</a>
+      <a class="itexperience_link" href="#itexperience">IT Experience</a>
+      <a class="about_link" href="#about">About</a>
+      <a class="contact_link" href="#contact">Contact</a>
+
+      <div id="burger-menu" class="burger_menu d-none" onclick="showMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+
+      <div id="close-btn" class="close_btn d-none" onclick="closeMenu()">
+        <div class="bar1_close"></div>
+        <div class="bar2_close"></div>
+        <div class="bar3_close"></div>
+      </div>
+    </nav>
+
+    <div id="overlay-menu" class="overlay-menu d-none">
+      <a href="#projects">Projects</a>
+      <a href="#itexperience">IT Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <header>
+      <div class="flex">
+        <div class="header_top">
+          <h1>Hello I'm Sebastian Netzker</h1>
+          <h2>Started as a Biotech Student. Became a Front-End Developer. From Cottbus, Germany.</h2>
+          <div class="social_network">
+            <a href="https://www.linkedin.com/in/sebastian-netzker-a55b921b5/">LI.</a>
+            <a class="instagram_link" href="https://www.instagram.com/sebastian__netzker/">IN.</a>
+            <a class="facebook_link" href="https://www.facebook.com/sebastian.netzker97/">FB.</a>
+          </div>
+          <div class="button">
+            <button type="submit" onclick="window.open('CV.pdf')">
+              Download CV
+            </button>
+          </div>
+        </div>
+        <div class="border_img_application">
+          <img class="img_application" src="img/application_photo.jpg" alt="" />
+        </div>
+
+        <div class="d-none header_downresponsive">
+          <h1>Hello I'm Sebastian Netzker</h1>
+          <h2>Started as a Biotech Student. Became a Front-End Developer. From Cottbus, Germany.</h2>
+          <div>
+            <a href="https://www.linkedin.com/in/sebastian-netzker-a55b921b5/">LI.</a>
+            <a class="instagram_link" href="https://www.instagram.com/sebastian__netzker/">IN.</a>
+            <a class="facebook_link" href="https://www.facebook.com/sebastian.netzker97/">FB.</a>
+          </div>
+          <div class="button">
+            <button type="submit" onclick="window.open('CV.pdf')">
+              Download CV
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="projects_section" id="projects">
+        <h1>Projects</h1>
+
+        <div class="flex_projects">
+          <div>
+            <a
+              href="http://sebastian-netzker.developerakademie.com/html_quizapp/ "
+              target="_blank"
+              >HTML Quiz</a
+            >
+
+            <h5>June - 2020</h5>
+
+            <a
+              class="js_documentation"
+              href="http://sebastian-netzker.developerakademie.com/html_quizapp/out/"
+              target="_blank"
+              >JS DOCUMENTATION</a
+            >
+          </div>
+
+          <div class="projects">
+            <p>A simple Quiz with questions about HTML.</p>
+            <div class="flex_keywords">
+              <div class="responsive_keywords">
+                <h5>HTML</h5>
+                <h5>CSS</h5>
+              </div>
+              <div class="responsive_keywords">
+                <h5>JavaScript</h5>
+                <h5>Quiz</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex_projects">
+          <div>
+            <a
+              href="http://sebastian-netzker.developerakademie.com/tic_tac_toe/"
+              target="_blank"
+              >Tic Tac Toe</a
+            >
+            <h5>August - 2020</h5>
+            <a
+              class="js_documentation"
+              href="http://sebastian-netzker.developerakademie.com/tic_tac_toe/out/"
+              target="_blank"
+              >JS DOCUMENTATION</a
+            >
+          </div>
+          <div class="projects">
+            <p>The classical game.</p>
+            <div class="flex_keywords">
+              <div class="responsive_keywords">
+                <h5>HTML</h5>
+                <h5>CSS</h5>
+              </div>
+              <div class="responsive_keywords">
+                <h5>JavaScript</h5>
+                <h5>Game</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex_projects">
+          <div>
+            <a
+              href="http://sebastian-netzker.developerakademie.com/join_taskmanager/"
+              target="_blank"
+              >JOIN Taskmanager</a
+            >
+            <h5>September - 2020</h5>
+            <a
+              class="js_documentation"
+              href="http://sebastian-netzker.developerakademie.com/join_taskmanager/out/"
+              target="_blank"
+              >JS DOCUMENTATION</a
+            >
+          </div>
+          <div class="projects">
+            <p>
+              With this web application, you can create different tasks, which
+              can be sorted according to the Eisenhower principle.
+            </p>
+            <div class="flex_keywords join_taskmanager">
+              <div class="responsive_keywords">
+                <h5>HTML</h5>
+                <h5>CSS</h5>
+                <h5>JavaScript</h5>
+              </div>
+
+              <div class="responsive_keywords">
+                <h5>REST API</h5>
+                <h5>Group Project</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex_projects">
+          <div>
+            <a
+              href="http://sebastian-netzker.developerakademie.com/kochwelt/ "
+              target="_blank"
+              >Kochwelt</a
+            >
+            <h5>December - 2020</h5>
+            <a
+              class="js_documentation"
+              href="http://sebastian-netzker.developerakademie.com/kochwelt/out/"
+              target="_blank"
+              >JS DOCUMENTATION</a
+            >
+          </div>
+          <div class="projects">
+            <p>
+              This is a website about cooking recipes, where you can create new
+              recipes.
+            </p>
+            <div class="flex_keywords kochwelt">
+              <div class="responsive_keywords">
+                <h5>HTML</h5>
+                <h5>CSS</h5>
+                <h5>JavaScript</h5>
+              </div>
+
+              <div class="responsive_keywords">
+                <h5>REST API</h5>
+                <h5>Group Project</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex_projects">
+          <div>
+            <a
+              href="http://sebastian-netzker.developerakademie.com/el_pollo_loco/"
+              target="_blank"
+              >El Pollo Loco</a
+            >
+            <h5>January - 2021</h5>
+            <a
+              class="js_documentation"
+              href="http://sebastian-netzker.developerakademie.com/el_pollo_loco/out/"
+              target="_blank"
+              >JS DOCUMENTATION</a
+            >
+          </div>
+          <div class="projects">
+            <p>
+              In this jump and run game, you have chicken as your opponent and
+              you have to survive them.
+            </p>
+            <div class="flex_keywords">
+              <div class="responsive_keywords">
+                <h5>HTML</h5>
+                <h5>CSS</h5>
+              </div>
+              <div class="responsive_keywords">
+                <h5>JavaScript</h5>
+                <h5>Game</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio" id="portfolio">
+        <h1 class="itexperience_h1" id="itexperience">IT Experience</h1>
+
+        <div class="flex_application">
+          <div class="webapplication">
+            <h2>Web Application</h2>
+            <p>
+              I built responsive web applications with HTML, CSS, JavaScript and
+              Bootstrap.
+            </p>
+            <p>I used a REST API for the permanent storage of data to a server.</p>
+          </div>
+          <div>
+            <img
+              class="portfolio_img"
+              src="img/join_taskmanager.png"
+              alt="join_taskmanager"
+            />
+          </div>
+        </div>
+
+        <div class="flex_application">
+          <div>
+            <img
+              class="portfolio_img kochwelt_img"
+              src="img/kochwelt.png"
+              alt="kochwelt"
+            />
+          </div>
+          <div class="groupproject">
+            <h2>Group Project</h2>
+            <p>
+              I built projects with people from Germany and Austria together.
+            </p>
+            <p>
+              We have organized ourselves to create tasks that had to be done.
+            </p>
+            <p>
+              We communicated regularly to solve problems and to meet the
+              deadline.
+            </p>
+          </div>
+          <img
+            class="portfolio_img kochwelt_imgresponsive d-none"
+            src="img/kochwelt.png"
+            alt="kochwelt"
+          />
+        </div>
+
+        <div class="flex_application">
+          <div class="game_quiz">
+            <h2>Game & Quiz</h2>
+            <p>I used my creativity to create games and quiz..</p>
+            <p>
+              Through these projects, I got a deep understanding of how JavaScript works.
+            </p>
+            <p></p>
+          </div>
+          <div>
+            <img
+              class="portfolio_img"
+              src="img/el_pollo_loco.png"
+              alt="el_pollo_loco"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="about_section" id="about">
+        <h1>About</h1>
+
+        <img class="laptop_img" src="img/laptop_img.jpg" alt="" />
+
+        <p>
+          My studies in Biotechnology was not the right way for me. I was made
+          for working at the computer, coding. Not the laboratory. I decide to
+          quit the university. I reorient myself and ask me the question "What
+          do I want to do professionally?". I looked for different career paths
+          so that I can find a job that fulfills me. I discovered programming
+          and sotware development after some time has passed. The first
+          experience I made with a simple online course about web development. I
+          developed a huge interest in this career path so it was clear to me
+          that I want to work in the IT Sector. I decide to learn Front-End
+          Development in a professional software development school to reach
+          this goal.
+        </p>
+
+        <p></p>
+        <p></p>
+
+        
+      </section>
+      <section id="contact" class="contact_section">
+        <div class="flex_contact">
+          <div>
+            <h1>Let's talk business</h1>
+
+            <p>
+              Now that you know a lot about me, let me know if you are
+              interested to work with me.
+            </p>
+          </div>
+
+          <div>
+            <form
+              action="https://sebastian-netzker.com/send_mail.php"
+              method="POST"
+            >
+              <div class="form-group" id="form_name">
+                <label>Name</label>
+                <input
+                  name="name"
+                  type="name"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  required
+                />
+              </div>
+
+              <div class="form-group" id="form_email">
+                <label>Email</label>
+                <input
+                  name="email"
+                  type="email"
+                  class="form-control"
+                  id="exampleFormControlInput1"
+                  required
+                />
+              </div>
+
+              <div class="form-group" id="form_message">
+                <label>Message</label>
+                <textarea
+                  name="message"
+                  class="form-control"
+                  id="exampleFormControlTextarea1"
+                  rows="10"
+                  required
+                ></textarea>
+              </div>
+
+              <div class="btn_send" id="btn_send">
+                <button class="button_contact">LET'S GET STARTED</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="flex_footer">
+        <a href="impressum.html">Impressum </a>
+
+        <p>-</p>
+
+        <a href="dataprotection.html">Data Protection</a>
+      </div>
+
+      <p class="footer_personalname">Sebastian Netzker - 2021</p>
+    </footer>
+
     
-</body>
+  </body>
 </html>
